@@ -1,0 +1,110 @@
+---
+import { Lightbulb, PenTool, Code, Rocket, TrendingUp } from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    icon: Lightbulb,
+    title: "Strategy",
+    description: "Understanding requirements, defining scope, and planning the technical architecture",
+    color: "yellow",
+    bg: "bg-yellow-500/10",
+    border: "border-yellow-500/40",
+    iconBg: "bg-yellow-500/20",
+    iconColor: "text-yellow-400",
+    numberBg: "bg-yellow-500/20",
+    numberColor: "text-yellow-400",
+  },
+  {
+    number: 2,
+    icon: PenTool,
+    title: "Architecture",
+    description: "Designing scalable system architecture, database schemas, and API structures",
+    color: "purple",
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/40",
+    iconBg: "bg-purple-500/20",
+    iconColor: "text-purple-400",
+    numberBg: "bg-purple-500/20",
+    numberColor: "text-purple-400",
+  },
+  {
+    number: 3,
+    icon: Code,
+    title: "Development",
+    description: "Building features with clean code, automated testing, and continuous integration",
+    color: "cyan",
+    bg: "bg-cyan-500/10",
+    border: "border-cyan-500/40",
+    iconBg: "bg-cyan-500/20",
+    iconColor: "text-cyan-400",
+    numberBg: "bg-cyan-500/20",
+    numberColor: "text-cyan-400",
+  },
+  {
+    number: 4,
+    icon: Rocket,
+    title: "Deployment",
+    description: "Cloud infrastructure setup, CI/CD pipelines, and production deployment",
+    color: "green",
+    bg: "bg-green-500/10",
+    border: "border-green-500/40",
+    iconBg: "bg-green-500/20",
+    iconColor: "text-green-400",
+    numberBg: "bg-green-500/20",
+    numberColor: "text-green-400",
+  },
+  {
+    number: 5,
+    icon: TrendingUp,
+    title: "Optimization",
+    description: "Performance monitoring, security audits, and continuous improvements",
+    color: "sky",
+    bg: "bg-sky-500/10",
+    border: "border-sky-500/40",
+    iconBg: "bg-sky-500/20",
+    iconColor: "text-sky-400",
+    numberBg: "bg-sky-500/20",
+    numberColor: "text-sky-400",
+  },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="flex justify-center flex-col items-center gap-3 mb-12">
+      <h4 class="text-4xl font-bold text-center">Development Process</h4>
+      <p class="text-lg text-gray-400/90 text-center">
+        A systematic approach to building production-ready applications
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {steps.map((step) => (
+        <div class={`relative flex flex-col gap-4 p-5 border rounded-xl ${step.bg} ${step.border} hover:scale-[1.02] transition-all duration-300`}>
+
+          <!-- Number badge -->
+          <div class={`absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step.numberBg} ${step.numberColor}`}>
+            {step.number}
+          </div>
+
+          <!-- Icon -->
+          <div class={`w-10 h-10 rounded-xl flex items-center justify-center ${step.iconBg}`}>
+            <step.icon class={`w-5 h-5 ${step.iconColor}`} />
+          </div>
+
+          <!-- Text -->
+          <div class="flex flex-col gap-2">
+            <h5 class="font-bold text-white">{step.title}</h5>
+            <p class="text-sm text-gray-400 leading-relaxed">{step.description}</p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

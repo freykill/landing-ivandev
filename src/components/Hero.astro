@@ -1,0 +1,100 @@
+---
+import { ArrowRight, Mail } from "@lucide/astro";
+---
+
+<section class="lg:h-screen h-auto bg-[#0a0a1a] relative overflow-hidden py-20 flex items-center justify-center">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,#2d1b6b_0%,transparent_60%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,#1a0f4a_0%,transparent_50%)]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10 relative z-10">
+    
+    
+    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-3">
+      
+        <div class="border-purple-400 mb-3 bg-[#0a0a1a] py-2 w-50 border px-3 rounded-full flex items-center gap-2 text-xs">
+          <div class="bg-green-600 rounded-full w-2 h-2"></div>
+          <p>Disponible para proyectos</p>
+        </div>
+
+        <!-- title principal -->
+        <h4 class="text-5xl leading-tight font-bold text-left">
+          Full-Stack Developer. Rompiendo,
+          <span
+            class="bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+            >refactorizando,</span
+          >
+          <br />
+          <span
+            class="bg-linear-to-r flex from-blue-400 to-purple-300 bg-clip-text text-transparent"
+            >¡solucionando!
+          </span>
+        </h4>
+
+        <!-- description -->
+        <p class="mt-4 text-lg text-gray-300 text-left">
+          Me dedico a construir sistemas con Angular, .NET, Node y AWS. Mi
+          enfoque es simple: entiendo el caos, lo ordeno y lo transformo en algo
+          que funcione. Al final, todo problema se rinde ante un buen café y un
+          momento de enfoque.
+        </p>
+
+        <!-- botonera -->
+        <div class="flex gap-3">
+          <button
+            class="flex group gap-1 cursor-pointer hover:brightness-120 items-center bg-linear-to-r from-purple-700 to-blue-500 text-xs! px-5 py-3 rounded-xl font-semibold mt-6"
+          >
+            View Projects
+            <ArrowRight
+              class="w-5 transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </button>
+
+          <button
+            class="flex group gap-2 cursor-pointer hover:brightness-120 items-center bg-[#0a0a1a] ring ring-purple-700/40 text-xs! px-5 py-3 rounded-xl font-semibold mt-6"
+          >
+            <Mail class="w-5" />
+            Trabajemos juntos
+          </button>
+        </div>
+
+        <!-- stats -->
+        <div class="flex gap-10 mt-10">
+          <div class="flex flex-col">
+            <h4 class="p-0 font-bold text-2xl">5+</h4>
+            <span class="text-xs p-0 text-gray-400">Years Experience</span>
+          </div>
+
+          <div class="flex flex-col">
+            <h4 class="p-0 font-bold text-2xl">50+</h4>
+            <span class="text-xs p-0 text-gray-400">Projects Completed</span>
+          </div>
+
+          <div class="flex flex-col">
+            <h4 class="p-0 font-bold text-2xl">99.9%</h4>
+            <span class="text-xs p-0 text-gray-400">Client Satisfaction</span>
+          </div>
+        </div>
+    </div>
+
+    <!-- IMG -->
+    <div class="col-span-2 lg:col-span-1 flex justify-center items-center">
+      <div class="relative rounded-xl w-full lg:w-125 lg:h-75 h-75 flex justify-center items-center shadow-lg">
+        <img
+          src="../../public/hero.jpg"
+          class="rounded-xl w-full h-full object-cover opacity-90"
+          alt="Coffee"
+        />
+        <div
+          class="absolute -bottom-3 -right-3 bg-gray-900/80 text-green-400 px-3 py-1 rounded-lg text-xs flex items-center gap-2 shadow"
+        >
+          <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span class="font-semibold text-white">System Online</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tooltip de disponible -->
+
+  <!-- message principal -->
+</section>

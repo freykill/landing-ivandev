@@ -1,0 +1,69 @@
+---
+import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
+---
+
+<section class="py-20">
+  <div
+    class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10"
+  >
+    <div class="col-span-2 flex justify-center flex-col items-center gap-3">
+      <h4 class="text-4xl font-bold">Del código a <span class="bg-linear-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">producción</span></h4>
+      <p class="text-lg text-gray-400/90">
+        Construyo aplicaciones web completas, de la interfaz al servidor, listas para el mundo real.
+      </p>
+    </div>
+
+    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-5">
+      <p class="text-lg leading-relaxed">
+        Me muevo entre el frontend y el backend según lo que el proyecto necesite. He construido dashboards, sistemas con autenticación, integraciones con terceros y flujos que tienen que funcionar bien cuando alguien de verdad los usa.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-400/90">
+        Me apoyo en herramientas de CI/CD y servicios cloud para que lo que construyo no se quede solo en mi máquina. Trato de entender bien el problema antes de escribir la primera línea, porque un buen diseño técnico ahorra muchas horas después.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-400/90">
+        Si algo puede automatizarse, lo automatizo. Si algo tiene que escalar, lo pienso desde el principio. Y si hay que arreglarlo a las 2 de la mañana, ya sé cómo.
+      </p>
+    </div>
+
+    <div class="col-span-2 lg:col-span-1 grid grid-cols-2 gap-3">
+      
+      <div class="border-purple-500/40 hover:border-purple-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-purple-500/10 to-blue-500/10">
+        <div class="bg-purple-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+          <Code class="text-purple-500" />
+        </div>
+        <h4>Frontend & Backend</h4>
+        <span>Interfaces que se ven bien y APIs que hacen su trabajo, sin sacrificar una por la otra.</span>
+      </div>
+
+      <div class="border-blue-500/40 hover:border-blue-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-blue-500/10 to-cyan-500/10">
+        <div class="bg-blue-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+          <Shield class="text-blue-400" />
+        </div>
+        <h4>Autenticación y permisos</h4>
+        <span>Sistemas de login, roles y control de acceso integrados desde el principio, no como parche al final.</span>
+      </div>
+
+      <div
+        class="border-cyan-500/40 hover:border-cyan-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-cyan-500/10 to-teal-500/10"
+      >
+        <div class="bg-cyan-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+          <Database class="text-cyan-400" />
+        </div>
+        <h4>Del local al servidor</h4>
+        <span>Uso pipelines y servicios cloud para que el proyecto llegue a producción sin dramas.</span>
+      </div>
+
+      <div
+        class="border-purple-500/40 hover:border-purple-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-purple-500/10 to-pink-500/10"
+      >
+        <div class="bg-purple-600/40 p-3 col-span-1 w-12 rounded-xl shadow">
+          <Zap class="text-purple-400" />
+        </div>
+        <h4>Código que dura</h4>
+        <span>Escribo pensando en quien lo va a mantener después, que muchas veces soy yo mismo.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMG -->
+</section>
