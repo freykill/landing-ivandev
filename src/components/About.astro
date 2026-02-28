@@ -3,64 +3,110 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
 ---
 
 <section class="py-20">
-  <div
-    class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10"
-  >
-    <div class="col-span-2 flex justify-center flex-col items-center gap-3">
-      <h4 class="text-4xl font-bold">Del código a <span class="bg-linear-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">producción</span></h4>
-      <p class="text-lg text-gray-400/90">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10">
+    
+    <div class="col-span-2 flex justify-center flex-col items-start gap-3">
+      <p class="text-sm text-white/30">// &nbsp&nbsp SOBRE MI</p>
+      <h4 class="text-5xl font-bold">
+        Del código a <span
+          class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent"
+          >producción</span>
+      </h4>
+      <!-- <p class="text-lg text-gray-400/90">
         Construyo aplicaciones web completas, de la interfaz al servidor, listas para el mundo real.
-      </p>
+      </p> -->
     </div>
 
-    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-5">
-      <p class="text-lg leading-relaxed">
-        Me muevo entre el frontend y el backend según lo que el proyecto necesite. He construido dashboards, sistemas con autenticación, integraciones con terceros y flujos que tienen que funcionar bien cuando alguien de verdad los usa.
+    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-8">
+      
+      <p class="text-lg">
+        Me muevo entre frontend y backend <br>
+        <span class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent">según lo que el proyecto necesite.</span>
       </p>
-      <p class="text-lg leading-relaxed text-gray-400/90">
-        Me apoyo en herramientas de CI/CD y servicios cloud para que lo que construyo no se quede solo en mi máquina. Trato de entender bien el problema antes de escribir la primera línea, porque un buen diseño técnico ahorra muchas horas después.
+
+      <div class="w-15 h-px bg-linear-to-r from-purple-400 to-45% to-blue-400 "></div>
+
+      <!-- <p class="text-lg leading-relaxed">
+        Me muevo entre el frontend y el backend según lo que el proyecto
+        necesite. He construido dashboards, sistemas con autenticación,
+        integraciones con terceros y flujos que tienen que funcionar bien cuando
+        alguien de verdad los usa.
+      </p> -->
+      <p class="text-lg leading-relaxed text-white/35">
+        Me apoyo en herramientas de <span class="text-white">CI/CD y servicios cloud</span> para que lo que
+        construyo no se quede solo en mi máquina. Trato de entender bien el
+        problema antes de escribir la primera línea, porque un buen diseño
+        técnico ahorra muchas horas después.
       </p>
-      <p class="text-lg leading-relaxed text-gray-400/90">
-        Si algo puede automatizarse, lo automatizo. Si algo tiene que escalar, lo pienso desde el principio. Y si hay que arreglarlo a las 2 de la mañana, ya sé cómo.
+      <p class="text-lg leading-relaxed text-white/35">
+        <span class="text-white">Si algo puede automatizarse, lo automatizo.</span> Si algo tiene que escalar,
+        lo pienso desde el principio. Y si hay que arreglarlo a las 2 de la
+        mañana, ya sé cómo.
       </p>
+
+
+      <div class="flex gap-5 opacity-30 text-sm">
+        <div class="w-[1.5px] h-auto bg-purple-400 "></div>
+        <p class="w-1/2">"Si algo tiene que escalar,
+            lo pienso desde el principio.
+            Y si hay que arreglarlo a las 2am,
+            ya sé cómo."</p>
+      </div>
+
+
+
     </div>
 
     <div class="col-span-2 lg:col-span-1 grid grid-cols-2 gap-3">
-      
-      <div class="border-purple-500/40 hover:border-purple-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-purple-500/10 to-blue-500/10">
+      <div class="col-span-2 lg:col-span-1 border-white/6 hover:border-purple-500/80 transition-all duration-300 flex flex-col gap-3 p-5 border rounded-xl shadow  bg-[#0e1020]/60 hover:bg-purple-500/10"
+    >
         <div class="bg-purple-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
-          <Code class="text-purple-500" />
+          <Code class="text-purple-400" />
         </div>
-        <h4>Frontend & Backend</h4>
-        <span>Interfaces que se ven bien y APIs que hacen su trabajo, sin sacrificar una por la otra.</span>
-      </div>
-
-      <div class="border-blue-500/40 hover:border-blue-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-blue-500/10 to-cyan-500/10">
-        <div class="bg-blue-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
-          <Shield class="text-blue-400" />
-        </div>
-        <h4>Autenticación y permisos</h4>
-        <span>Sistemas de login, roles y control de acceso integrados desde el principio, no como parche al final.</span>
+        <h4 class="text-lg font-semibold">Frontend & Backend</h4>
+        <span class="text-gray-400"
+          >Interfaces que se ven bien y APIs que hacen su trabajo, sin
+          sacrificar una por la otra.</span
+        >
       </div>
 
       <div
-        class="border-cyan-500/40 hover:border-cyan-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-cyan-500/10 to-teal-500/10"
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-blue-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-blue-500/10"
+      >
+        <div class="bg-blue-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+          <Shield class="text-blue-400" />
+        </div>
+        <h4 class="text-lg font-semibold">Autenticación y permisos</h4>
+        <span class="text-gray-400"
+          >Sistemas de login, roles y control de acceso integrados desde el
+          principio, no como parche al final.</span
+        >
+      </div>
+
+      <div
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-cyan-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-cyan-500/10"
       >
         <div class="bg-cyan-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
           <Database class="text-cyan-400" />
         </div>
-        <h4>Del local al servidor</h4>
-        <span>Uso pipelines y servicios cloud para que el proyecto llegue a producción sin dramas.</span>
+        <h4 class="text-lg font-semibold">Del local al servidor</h4>
+        <span class="text-gray-400"
+          >Uso pipelines y servicios cloud para que el proyecto llegue a
+          producción sin dramas.</span
+        >
       </div>
 
       <div
-        class="border-purple-500/40 hover:border-purple-500/80 transition-colors col-span-1 flex flex-col gap-3 p-5 border rounded-xl shadow bg-linear-to-r from-purple-500/10 to-pink-500/10"
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-purple-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-purple-500/10"
       >
         <div class="bg-purple-600/40 p-3 col-span-1 w-12 rounded-xl shadow">
           <Zap class="text-purple-400" />
         </div>
-        <h4>Código que dura</h4>
-        <span>Escribo pensando en quien lo va a mantener después, que muchas veces soy yo mismo.</span>
+        <h4 class="text-lg font-semibold">Código que dura</h4>
+        <span class="text-gray-400"
+          >Escribo pensando en quien lo va a mantener después, que muchas veces
+          soy yo mismo.</span
+        >
       </div>
     </div>
   </div>

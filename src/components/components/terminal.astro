@@ -1,0 +1,68 @@
+---
+---
+
+<div class="relative flex flex-col gap-5 w-full">
+
+  <!-- Terminal Card -->
+  <div class="rounded-2xl border border-white/6 overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)] bg-[#0e1020]/80 backdrop-blur-xl">
+    
+    <!-- Header -->
+    <div class="flex items-center gap-2 px-4 py-3 bg-white/3 border-b border-white/6">  
+      <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+      <span class="mx-auto font-mono text-[11px] text-white/30">
+        ~/projects/<span class="text-[#3ecfcf]">portfolio</span>
+      </span>
+    </div>
+
+    <!-- Body -->
+    <div class="p-5 font-mono text-[13px] leading-[1.85]">
+      <div class="flex gap-2.5">
+        <span class="text-[#3ecfcf]">→</span>
+        <span class="text-white/90">node deploy.js --env production</span>
+      </div>
+      <div class="pl-5 text-white/35">Building Angular app...</div>
+      <div class="pl-5 text-[#a78bfa]">✓ Compilation successful (4.2s)</div>
+      <div class="pl-5 text-white/35">Uploading to AWS S3...</div>
+      <div class="pl-5 text-[#a78bfa]">✓ 47 files synced</div>
+      <div class="pl-5 text-white/35">Invalidating CloudFront cache...</div>
+      <div class="pl-5 text-[#22c55e]">✓ Deploy complete — system online</div>
+      <div class="flex gap-2.5 mt-2 items-center">
+        <span class="text-[#3ecfcf]">→</span>
+        <span class="inline-block w-2 h-3.5 bg-[#7c5cfc] align-middle animate-[blink_1.1s_step-end_infinite]"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="grid grid-cols-3 divide-x divide-white/6 rounded-2xl border border-white/6 overflow-hidden bg-[#0e1020]/60 backdrop-blur-xl">
+    <div class="px-6 py-5 flex flex-col gap-1 ">
+      <span class=" font-extrabold text-[28px] tracking-tight text-white/90">
+        3<span class="text-[#7c5cfc]">+</span>
+      </span>
+      <span class="text-xs text-white/30 font-light">Years Experience</span>
+    </div>
+    <div class="px-6 py-5 flex flex-col gap-1 ">
+      <span class=" font-extrabold text-[28px] tracking-tight text-white/90">
+        10<span class="text-[#7c5cfc]">+</span>
+      </span>
+      <span class="text-xs text-white/30 font-light">Projects Completed</span>
+    </div>
+    <div class="px-6 py-5 flex flex-col gap-1 ">
+      <span class=" font-extrabold text-[28px] tracking-tight text-white/90">
+        99<span class="text-[#7c5cfc]">%</span>
+      </span>
+      <span class="text-xs text-white/30 font-light">Client Satisfaction</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Agrega esto en tu CSS/tailwind.config si no tienes el keyframe -->
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
