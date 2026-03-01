@@ -132,15 +132,14 @@ import Navegador from "./components/navegador.astro";
 
       <div class="flex flex-wrap gap-3">
         <button
-          onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
-          class="w-full lg:w-auto justify-center flex group gap-1 cursor-pointer hover:brightness-120 items-center bg-[#7c5cfc] shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
-        >
+          onclick="window.open('#', '_blank')"
+          class="w-full lg:w-auto justify-center flex group gap-1 cursor-pointer hover:brightness-120 items-center bg-[#7c5cfc] shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 px-6 py-3 rounded-xl font-semibold">
           <ExternalLink class="w-5" />
           Ver proyecto
         </button>
 
         <button
-          onclick="document.getElementById('cta').scrollIntoView({ behavior: 'smooth' })"
+          onclick="window.open('https://github.com/freykill/fiz-ng', '_blank')"
           class="w-full lg:w-auto justify-center flex group gap-2 cursor-pointer hover:backdrop-brightness-150 items-center bg-[#0e1020]/80 ring hover:ring-white hover:-translate-y-1 transition-all duration-300 ring-white/6 px-6 py-3 rounded-xl font-semibold"
         >
           <Github class="w-5" />
