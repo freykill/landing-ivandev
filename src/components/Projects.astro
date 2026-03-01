@@ -1,125 +1,154 @@
 ---
-import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
+import { ArrowRight, ExternalLink, Mail, Github } from "@lucide/astro";
+import Navegador from "./components/navegador.astro";
 ---
 
 <section class="py-20" id="projects">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10">
-
-    <div class="col-span-2 flex justify-center flex-col items-center gap-3">
-      <h4 class="text-4xl font-bold text-center">Finance Application Platform</h4>
+  <div
+    class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10"
+  >
+    <!-- <div class="col-span-2 flex justify-center flex-col items-center gap-3">
+      <h4 class="text-4xl font-bold text-center">
+        Finance Application Platform
+      </h4>
       <p class="text-lg text-gray-400/90">
         Tecnología moderna para problemas modernos.
       </p>
+    </div> -->
+
+    <div class="col-span-2 flex justify-center flex-col items-start gap-3">
+      <p class="text-sm text-white/30">// &nbsp&nbsp PROYECTOS</p>
+      <h4 class="text-5xl font-bold">
+        Lo que he <span
+          class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent"
+          >construido</span
+        >
+      </h4>
+      <!-- <p class="text-lg text-gray-400/90">
+        Construyo aplicaciones web completas, de la interfaz al servidor, listas para el mundo real.
+      </p> -->
     </div>
 
-    <div class="col-span-2 lg:col-span-1 relative h-150 flex justify-center items-center">
-
-      <img
-        src="/fiz.png"
-        class="object-cover h-full rounded-2xl shadow"
-        alt="Finance Application Platform"
+    <div class="col-span-2 lg:col-span-1 flex justify-center items-center">
+      <Navegador
+        src="pantalla_fiz.png"
+        url="app.fiz.com"
+        alt="Finance App Dashboard"
       />
-
-      <div class="absolute top-5 right-5">
-        <div class="bg-green-500/20 px-2 py-1 border border-green-300  rounded-lg shadow">
-          <h4 class="text-green-400 text-xs">Produccion Listo</h4>
-        </div>
-      </div>
-
-
-
     </div>
 
-    <div class="col-span-2 lg:col-span-1">
+    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-8">
+      <div class="flex flex-col gap-3">
+        <p class="text-sm text-white/30">01&nbsp / &nbsp PROYECTOS</p>
+        <h4 class="text-3xl font-semibold">Finance Application Platform</h4>
+      </div>
 
-      <div class="border border-gray-500/40 rounded-2xl flex gap-3 p-5 bg-[#151F33]/40 ">
-        <div class="flex justify-center items-center">
-          <div class="bg-purple-500/40 p-3 1 w-12 rounded-xl shadow">
-            <Code class="text-purple-500" />
-          </div>
+      <p class="text-white/35 text-lg">
+        App para gestionar finanzas personales — ingresos, gastos y balance en
+        tiempo real. Desplegada en servidor propio con CI/CD automatizado vía
+        GitHub Actions.
+      </p>
+
+      <div class="flex flex-col gap-3">
+        <div
+          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
+        >
+          <div class="w-2.5 h-2.25 rounded-full bg-[#7c5cfc] mt-1.5"></div>
+          <p class="text-white/35">
+            <span class="text-white">Auth con JWT + Refresh Token</span> — sesiones
+            seguras y persistentes sin fricción
+          </p>
         </div>
 
-        <div class="">
-          <h4 class="font-bold">Secure Authentication</h4>
-          <span class="text-gray-400/40"
-            >Implementación de sistemas de autenticación robustos
-          </span>
+        <div
+          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
+        >
+          <div class="w-2.5 h-2.25 rounded-full bg-[#7c5cfc] mt-1.5"></div>
+          <p class="text-white/35">
+            <span class="text-white">Interfaz limpia e intuitiva</span> — construida
+            con Angular y componentes modernos
+          </p>
+        </div>
+
+        <div
+          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
+        >
+          <div class="w-2.5 h-2.25 rounded-full bg-[#7c5cfc] mt-1.5"></div>
+          <p class="text-white/35">
+            <span class="text-white">Deploy automatizado</span> — GitHub Actions +
+            Docker en servidor propio, sin intervención manual
+          </p>
         </div>
       </div>
 
-      <!-- Nuevo bloque de feature card -->
-      <div class="border border-gray-500/40 rounded-2xl flex gap-3 p-5 bg-[#151F33]/40 mt-4">
-        <div class="flex justify-center items-center">
-          <div class="bg-purple-500/40 p-3 w-12 rounded-xl shadow">
-            <Shield class="text-purple-500" />
-          </div>
-        </div>
-        <div>
-          <h4 class="font-bold">Role-Based Access</h4>
-          <span class="text-gray-400/40">
-            Permisos granulares para diferentes tipos de usuario
-          </span>
-        </div>
-      </div>
-
-      <!-- Clean UI/UX -->
-      <div class="border border-gray-500/40 rounded-2xl flex gap-3 p-5 bg-[#151F33]/40 mt-4">
-        <div class="flex justify-center items-center">
-          <div class="bg-purple-500/40 p-3 w-12 rounded-xl shadow">
-            <Mail class="text-purple-500" />
-          </div>
-        </div>
-        <div>
-          <h4 class="font-bold">Clean UI/UX</h4>
-          <span class="text-gray-400/40">
-            Interfaz intuitiva construida con frameworks modernos
-          </span>
-        </div>
-      </div>
-
-      <!-- Scalable Architecture -->
-      <div class="border border-gray-500/40 rounded-2xl flex gap-3 p-5 bg-[#151F33]/40 mt-4">
-        <div class="flex justify-center items-center">
-          <div class="bg-purple-500/40 p-3 w-12 rounded-xl shadow">
-            <Database class="text-purple-500" />
-          </div>
-        </div>
-        <div>
-          <h4 class="font-bold">Scalable Architecture</h4>
-          <span class="text-gray-400/40">
-            Infraestructura AWS capaz de manejar miles de transacciones
-          </span>
-        </div>
-      </div>
-
-
-      <!-- tecnolgias -->
-      <div class="grid grid-cols-6 gap-2 mt-6">
-        <div class="border rounded-full border-gray-800 px-2 py-1 col-span-1 flex justify-center items-center ">
+      <!-- <div class="flex flex-wrap gap-2">
+        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
           <p class="text-xs text-white">Angular</p>
         </div>
-
-        <div class="border rounded-full border-gray-800 px-2 py-1 col-span-1 flex justify-center items-center ">
-          <p class="text-xs text-white">Posgres</p>
+        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
+          <p class="text-xs text-white">Postgres</p>
         </div>
-
-        <div class="border rounded-full border-gray-800 px-2 py-1 col-span-1 flex justify-center items-center ">
+        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
           <p class="text-xs text-white">Docker</p>
         </div>
-
-        <div class="border rounded-full border-gray-800 px-2 py-1 col-span-1 flex justify-center items-center ">
+        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
           <p class="text-xs text-white">TypeScript</p>
         </div>
-
-        <div class="border rounded-full border-gray-800 px-2 py-1 col-span-1 flex justify-center items-center ">
+        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
           <p class="text-xs text-white">Sequelize</p>
         </div>
+      </div> -->
 
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <!-- <p class="text text-white/30">STACK</p>
+          <p class="text text-white/30">/</p> -->
+
+        <div
+          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
+        >
+          Angular
+        </div>
+        <div
+          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
+        >
+          Postgres
+        </div>
+        <div
+          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
+        >
+          Docker
+        </div>
+        <div
+          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
+        >
+          TypeScript
+        </div>
+        <div
+          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
+        >
+          Sequelize
+        </div>
       </div>
 
-      
+      <div class="flex flex-wrap gap-3">
+        <button
+          onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
+          class="w-full lg:w-auto justify-center flex group gap-1 cursor-pointer hover:brightness-120 items-center bg-[#7c5cfc] shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
+        >
+          <ExternalLink class="w-5" />
+          Ver proyecto
+        </button>
+
+        <button
+          onclick="document.getElementById('cta').scrollIntoView({ behavior: 'smooth' })"
+          class="w-full lg:w-auto justify-center flex group gap-2 cursor-pointer hover:backdrop-brightness-150 items-center bg-[#0e1020]/80 ring hover:ring-white hover:-translate-y-1 transition-all duration-300 ring-white/6 px-6 py-3 rounded-xl font-semibold"
+        >
+          <Github class="w-5" />
+          GitHub
+        </button>
+      </div>
     </div>
   </div>
-
-  <!-- IMG -->
 </section>
+
+<!-- IMG -->

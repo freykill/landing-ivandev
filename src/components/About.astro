@@ -9,7 +9,7 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       <p class="text-sm text-white/30">// &nbsp&nbsp SOBRE MI</p>
       <h4 class="text-5xl font-bold">
         Del código a <span
-          class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent"
+          class="bg-linear-to-r from-[#7c5cfc] to-45% to-blue-400 bg-clip-text text-transparent"
           >producción</span>
       </h4>
       <!-- <p class="text-lg text-gray-400/90">
@@ -21,17 +21,12 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       
       <p class="text-lg">
         Me muevo entre frontend y backend <br>
-        <span class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent">según lo que el proyecto necesite.</span>
+        <span class=" text-white/60 ">según lo que el proyecto necesite.</span>
       </p>
 
-      <div class="w-15 h-px bg-linear-to-r from-purple-400 to-45% to-blue-400 "></div>
+      <div class="w-15 h-px bg-linear-to-r from-[#7c5cfc] to-45% to-blue-400 "></div>
 
-      <!-- <p class="text-lg leading-relaxed">
-        Me muevo entre el frontend y el backend según lo que el proyecto
-        necesite. He construido dashboards, sistemas con autenticación,
-        integraciones con terceros y flujos que tienen que funcionar bien cuando
-        alguien de verdad los usa.
-      </p> -->
+
       <p class="text-lg leading-relaxed text-white/35">
         Me apoyo en herramientas de <span class="text-white">CI/CD y servicios cloud</span> para que lo que
         construyo no se quede solo en mi máquina. Trato de entender bien el
@@ -46,22 +41,20 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
 
 
       <div class="flex gap-5 opacity-30 text-sm">
-        <div class="w-[1.5px] h-auto bg-purple-400 "></div>
-        <p class="w-1/2">"Si algo tiene que escalar,
-            lo pienso desde el principio.
-            Y si hay que arreglarlo a las 2am,
-            ya sé cómo."</p>
-      </div>
+      <div class="w-[1.5px] h-auto bg-[#7c5cfc]"></div>
+      <p class="w-1/2">"No entrego algo hasta que estoy seguro de que funciona. No porque me lo pidan — sino porque no puedo dejarlo así."</p>
+    </div>
 
 
 
     </div>
 
     <div class="col-span-2 lg:col-span-1 grid grid-cols-2 gap-3">
-      <div class="col-span-2 lg:col-span-1 border-white/6 hover:border-purple-500/80 transition-all duration-300 flex flex-col gap-3 p-5 border rounded-xl shadow  bg-[#0e1020]/60 hover:bg-purple-500/10"
-    >
-        <div class="bg-purple-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
-          <Code class="text-purple-400" />
+      
+      
+      <div class="col-span-2 lg:col-span-1 border-white/6 hover:border-[#7c5cfc]/30 transition-all duration-300 flex flex-col gap-3 p-5 border rounded-xl shadow  bg-[#0e1020]/80 hover:backdrop-brightness-150">
+        <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
+          <Code class="text-[#7c5cfc]" />
         </div>
         <h4 class="text-lg font-semibold">Frontend & Backend</h4>
         <span class="text-gray-400"
@@ -71,9 +64,9 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       </div>
 
       <div
-        class="border-white/6 col-span-2 lg:col-span-1 hover:border-blue-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-blue-500/10"
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-blue-500/30 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:backdrop-brightness-150"
       >
-        <div class="bg-blue-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+        <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Shield class="text-blue-400" />
         </div>
         <h4 class="text-lg font-semibold">Autenticación y permisos</h4>
@@ -84,9 +77,9 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       </div>
 
       <div
-        class="border-white/6 col-span-2 lg:col-span-1 hover:border-cyan-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-cyan-500/10"
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-cyan-500/30 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:backdrop-brightness-150"
       >
-        <div class="bg-cyan-500/40 p-3 col-span-1 w-12 rounded-xl shadow">
+        <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Database class="text-cyan-400" />
         </div>
         <h4 class="text-lg font-semibold">Del local al servidor</h4>
@@ -97,10 +90,10 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       </div>
 
       <div
-        class="border-white/6 col-span-2 lg:col-span-1 hover:border-purple-500/80 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:bg-purple-500/10"
+        class="border-white/6 col-span-2 lg:col-span-1 hover:border-[#7c5cfc]/30 transition-colors flex flex-col gap-3 p-5 border rounded-xl shadow bg-[#0e1020]/80 hover:backdrop-brightness-150"
       >
-        <div class="bg-purple-600/40 p-3 col-span-1 w-12 rounded-xl shadow">
-          <Zap class="text-purple-400" />
+        <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
+          <Zap class="text-[#7c5cfc]" />
         </div>
         <h4 class="text-lg font-semibold">Código que dura</h4>
         <span class="text-gray-400"
