@@ -3,9 +3,11 @@ interface Props {
   title: string;
 }
 
+
+
 const { title } = Astro.props;
 import '../pages/styles/global.css';
-
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -62,6 +64,7 @@ import '../pages/styles/global.css';
         </div>
       </div>
     </footer>
+    <Analytics />
   </body>
 </html>
 
