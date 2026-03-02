@@ -1,11 +1,4 @@
 ---
-interface Props {
-  title: string;
-}
-
-
-
-const { title } = Astro.props;
 import '../pages/styles/global.css';
 import Analytics from '@vercel/analytics/astro'
 ---
@@ -24,10 +17,10 @@ import Analytics from '@vercel/analytics/astro'
     <link rel="apple-touch-icon" sizes="512x512" href="/favicon-512.png" />
 
     <!-- Primary Meta Tags -->
-    <title>Full-Stack Developer | Angular, .NET, Node, AWS</title>
-    <meta name="title" content="Full-Stack Developer | Angular, .NET, Node, AWS" />
+    <title>Ivan Diaz | Full-Stack Developer</title>
+    <meta name="title" content="Ivan Diaz | Full-Stack Developer" />
     <meta name="description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
-    <meta name="author" content="Ivan Dev" />
+    <meta name="author" content="Ivan Diaz" />
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="full-stack developer, angular, .net, nodejs, aws, typescript, docker, web development, portfolio" />
     <link rel="canonical" href="https://landing-ivandev.vercel.app/" />
@@ -35,7 +28,7 @@ import Analytics from '@vercel/analytics/astro'
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://landing-ivandev.vercel.app/" />
-    <meta property="og:title" content="Full-Stack Developer | Angular, .NET, Node, AWS" />
+    <meta property="og:title" content="Ivan Diaz | Full-Stack Developer" />
     <meta property="og:description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
     <meta property="og:image" content="https://landing-ivandev.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -45,7 +38,7 @@ import Analytics from '@vercel/analytics/astro'
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://landing-ivandev.vercel.app/" />
-    <meta property="twitter:title" content="Full-Stack Developer | Angular, .NET, Node, AWS" />
+    <meta property="twitter:title" content="Ivan Diaz | Full-Stack Developer" />
     <meta property="twitter:description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
     <meta property="twitter:image" content="https://landing-ivandev.vercel.app/og-image.png" />
 
@@ -57,7 +50,7 @@ import Analytics from '@vercel/analytics/astro'
     <slot />
     <footer class="border-t border-white/10 py-5">
       <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-        <p>© 2026 Full-Stack Developer. Built with precision.</p>
+        <p>© 2026 Ivan Diaz. Built with precision.</p>
         <div class="flex gap-6">
           <!-- <a href="#" class="hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
           <a href="#" class="hover:text-gray-300 transition-colors duration-200">Terms of Service</a> -->
