@@ -1,0 +1,273 @@
+---
+import { ExternalLink, ChevronLeft, ChevronRight } from "@lucide/astro";
+
+// `category` agrupa los tabs de filtrado. `url` es opcional:
+// si la pones, aparece el enlace "Ver credencial". `year` también es opcional.
+const certs = [
+  // ── Título universitario ──
+  {
+    title: "Ingeniería en Tecnologías de la Información",
+    issuer: "Universidad Técnica de Machala",
+    year: "2024",
+    url: "",
+    category: "TÍTULO",
+  },
+
+  // ── Idiomas ──
+  {
+    title: "Inglés — Nivel 6",
+    issuer: "Universidad Técnica de Machala · Centro de Educación Continua",
+    year: "2026",
+    url: "",
+    category: "IDIOMAS",
+  },
+
+  // ── Cisco Networking Academy ──
+  {
+    title: "Fundamentos de Python 1",
+    issuer: "Cisco Networking Academy",
+    year: "",
+    url: "",
+    category: "CISCO",
+  },
+  {
+    title: "NDG Linux Unhatched",
+    issuer: "Cisco Networking Academy",
+    year: "",
+    url: "",
+    category: "CISCO",
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    year: "",
+    url: "",
+    category: "CISCO",
+  },
+
+  // ── Udemy ──
+  {
+    title: "Programación Backend en C# .NET",
+    issuer: "Udemy",
+    year: "",
+    url: "",
+    category: "UDEMY",
+  },
+  {
+    title: "Principios SOLID y Clean Code",
+    issuer: "Udemy",
+    year: "",
+    url: "",
+    category: "UDEMY",
+  },
+  {
+    title: "API REST Full completa con PHP Nativo",
+    issuer: "Udemy",
+    year: "",
+    url: "",
+    category: "UDEMY",
+  },
+
+  // ── Otros cursos ──
+  {
+    title: "Python Dominio Medio – Avanzado",
+    issuer: "Universidad Estatal de Milagro",
+    year: "",
+    url: "",
+    category: "CURSOS",
+  },
+  {
+    title: "Bases de Datos SQL desde Cero",
+    issuer: "EDteam",
+    year: "",
+    url: "",
+    category: "CURSOS",
+  },
+  {
+    title: "Business Partner Integrity",
+    issuer: "IBM",
+    year: "",
+    url: "",
+    category: "CURSOS",
+  },
+];
+
+const categories = [...new Set(certs.map((c) => c.category))].map((name) => ({
+  name,
+  count: certs.filter((c) => c.category === name).length,
+}));
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col gap-10">
+    <div class="flex flex-col items-start gap-3">
+      <p class="text-sm font-mono tracking-widest text-white/30">04 — CERTIFICACIONES</p>
+      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+        Títulos y <span class="text-white/40">certificados</span>
+      </h4>
+    </div>
+
+    <!-- Tabs de filtrado -->
+    <div class="flex flex-wrap gap-2">
+      <button
+        data-cert-filter="all"
+        data-active="true"
+        class="cert-tab cursor-pointer flex items-center gap-2 font-mono text-xs tracking-widest px-4 py-2 rounded-full border border-white/6 bg-[#161616] text-white/40 hover:border-white/15 transition-colors duration-200"
+      >
+        TODOS <span class="cert-count text-white/25">{certs.length}</span>
+      </button>
+      {categories.map((category) => (
+        <button
+          data-cert-filter={category.name}
+          data-active="false"
+          class="cert-tab cursor-pointer flex items-center gap-2 font-mono text-xs tracking-widest px-4 py-2 rounded-full border border-white/6 bg-[#161616] text-white/40 hover:border-white/15 transition-colors duration-200"
+        >
+          {category.name} <span class="cert-count text-white/25">{category.count}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Lista (paginada: máx 3 por página) -->
+    <div class="flex flex-col" id="cert-list">
+      {certs.map((item) => (
+        <div
+          data-cert-item={item.category}
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5 border-t border-white/6 hover:border-white/15 transition-colors duration-200"
+        >
+          <div class="flex flex-col gap-1">
+            <h5 class="text-lg font-semibold tracking-tight">{item.title}</h5>
+            <p class="text-white/35 text-sm">{item.issuer}</p>
+          </div>
+
+          <div class="flex items-center gap-6 shrink-0">
+            {item.year && (
+              <p class="font-mono text-sm tracking-widest text-white/25">{item.year}</p>
+            )}
+            {item.url && (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener"
+                class="flex items-center gap-2 font-mono text-xs tracking-widest text-white/40 hover:text-[#9f82ff] transition-colors duration-200"
+              >
+                VER CREDENCIAL
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Paginación (solo visible si hay más de 3 items en el filtro activo) -->
+    <div id="cert-pagination" class="flex items-center justify-between border-t border-white/6 pt-5" hidden>
+      <p class="font-mono text-xs tracking-widest text-white/25">
+        <span id="cert-page-current">1</span> / <span id="cert-page-total">1</span>
+      </p>
+      <div class="flex gap-2">
+        <button
+          id="cert-prev"
+          aria-label="Página anterior"
+          class="cert-page-btn cursor-pointer flex items-center justify-center w-9 h-9 rounded-full border border-white/6 bg-[#161616] text-white/40 hover:border-white/15 hover:text-white transition-colors duration-200 disabled:opacity-30 disabled:cursor-default disabled:hover:border-white/6 disabled:hover:text-white/40"
+        >
+          <ChevronLeft class="w-4 h-4" />
+        </button>
+        <button
+          id="cert-next"
+          aria-label="Página siguiente"
+          class="cert-page-btn cursor-pointer flex items-center justify-center w-9 h-9 rounded-full border border-white/6 bg-[#161616] text-white/40 hover:border-white/15 hover:text-white transition-colors duration-200 disabled:opacity-30 disabled:cursor-default disabled:hover:border-white/6 disabled:hover:text-white/40"
+        >
+          <ChevronRight class="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cert-tab[data-active="true"] {
+    background-color: #7c5cfc;
+    border-color: transparent;
+    color: #ffffff;
+  }
+  .cert-tab[data-active="true"] .cert-count {
+    color: rgba(255, 255, 255, 0.7);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  const PER_PAGE = 3;
+
+  const tabs = document.querySelectorAll<HTMLButtonElement>("[data-cert-filter]");
+  const items = [...document.querySelectorAll<HTMLElement>("[data-cert-item]")];
+  const pagination = document.getElementById("cert-pagination") as HTMLElement;
+  const pageCurrent = document.getElementById("cert-page-current") as HTMLElement;
+  const pageTotal = document.getElementById("cert-page-total") as HTMLElement;
+  const prevBtn = document.getElementById("cert-prev") as HTMLButtonElement;
+  const nextBtn = document.getElementById("cert-next") as HTMLButtonElement;
+
+  let filter = "all";
+  let page = 0;
+
+  function render(animate = true) {
+    const matched = items.filter(
+      (item) => filter === "all" || item.dataset.certItem === filter
+    );
+    const totalPages = Math.max(1, Math.ceil(matched.length / PER_PAGE));
+    page = Math.min(page, totalPages - 1);
+
+    const start = page * PER_PAGE;
+    const visible: HTMLElement[] = [];
+
+    items.forEach((item) => {
+      const idx = matched.indexOf(item);
+      const show = idx >= start && idx < start + PER_PAGE;
+      item.style.display = show ? "" : "none";
+      if (show) visible.push(item);
+    });
+
+    // Controles: solo se muestran si hay más de una página
+    pagination.hidden = totalPages <= 1;
+    pageCurrent.textContent = String(page + 1);
+    pageTotal.textContent = String(totalPages);
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page === totalPages - 1;
+
+    if (animate) {
+      gsap.from(visible, {
+        opacity: 0,
+        y: 12,
+        duration: 0.4,
+        stagger: 0.05,
+        ease: "power2.out",
+        clearProps: "opacity,transform",
+      });
+    }
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => (t.dataset.active = "false"));
+      tab.dataset.active = "true";
+      filter = tab.dataset.certFilter ?? "all";
+      page = 0; // al cambiar de filtro, volvemos a la primera página
+      render();
+    });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (page > 0) {
+      page--;
+      render();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    page++;
+    render();
+  });
+
+  render(false); // estado inicial: TODOS, página 1
+</script>

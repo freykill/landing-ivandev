@@ -1,0 +1,21 @@
+---
+const text = "ANGULAR / .NET / NODE / AWS / FABRICIODIAZPAY@GMAIL.COM / ".repeat(6);
+---
+
+<div class="border-y border-white/8 py-4 overflow-hidden select-none" aria-hidden="true">
+  <div class="marquee-track flex whitespace-nowrap font-mono text-sm tracking-widest text-white/20 uppercase">
+    <span>{text}</span>
+    <span>{text}</span>
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    width: max-content;
+    animation: marquee 60s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+</style>

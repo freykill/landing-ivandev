@@ -46,11 +46,17 @@ import Analytics from '@vercel/analytics/astro'
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#080B14] text-white font-sans antialiased ">
+  <body class="bg-[#121212] text-white font-sans antialiased ">
+    <!-- Capas de fondo globales (detrás de todo, no capturan eventos) -->
+    <!-- Grid base sutil tipo blueprint, se desvanece hacia los bordes -->
+    <div id="bg-grid" class="fixed inset-0 -z-10 pointer-events-none"></div>
+    <!-- Mismos puntos en morado, revelados solo alrededor del cursor -->
+    <div id="bg-spotlight" class="fixed inset-0 -z-10 pointer-events-none"></div>
+
     <slot />
     <footer class="border-t border-white/10 py-5">
       <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-        <p>© 2026 Ivan Diaz. Built with precision.</p>
+        <p>© 2026 Ivan Diaz</p>
         <div class="flex gap-6">
           <!-- <a href="#" class="hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
           <a href="#" class="hover:text-gray-300 transition-colors duration-200">Terms of Service</a> -->
@@ -58,11 +64,86 @@ import Analytics from '@vercel/analytics/astro'
       </div>
     </footer>
     <Analytics />
+
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Spotlight del grid: el cursor revela los puntos morados a su alrededor
+      // (throttle con rAF; solo con mouse real)
+      if (window.matchMedia("(pointer: fine)").matches) {
+        const root = document.documentElement;
+        let ticking = false;
+        window.addEventListener("pointermove", (e) => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            root.style.setProperty("--mx", e.clientX + "px");
+            root.style.setProperty("--my", e.clientY + "px");
+            ticking = false;
+          });
+        });
+      }
+
+      // Entrada del texto del hero
+      const heroCopy = document.querySelector("#hero-copy");
+      if (heroCopy) {
+        gsap.from(heroCopy.children, {
+          y: 24,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+        });
+      }
+
+      // Reveal de cada sección al entrar en viewport (excepto el hero)
+      document.querySelectorAll("main section").forEach((section, i) => {
+        if (i === 0) return;
+        const container = section.querySelector(":scope > div");
+        if (!container) return;
+        gsap.from(container.children, {
+          y: 28,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: { trigger: section, start: "top 78%", once: true },
+        });
+      });
+    </script>
   </body>
 </html>
 
 <style is:global>
   body {
     font-family: 'Inter', sans-serif;
+  }
+
+  /* Grid base: puntos blancos finos que se desvanecen hacia los bordes */
+  #bg-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 34px 34px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+  }
+
+  /* Spotlight: los MISMOS puntos en morado, alineados con el grid base, pero
+     revelados solo en un círculo alrededor del cursor (máscara radial). */
+  #bg-spotlight {
+    background-image: radial-gradient(circle, rgba(124, 92, 252, 0.55) 1px, transparent 1px);
+    background-size: 34px 34px;
+    -webkit-mask-image: radial-gradient(
+      170px circle at var(--mx, -200px) var(--my, -200px),
+      #000 0%,
+      transparent 65%
+    );
+    mask-image: radial-gradient(
+      170px circle at var(--mx, -200px) var(--my, -200px),
+      #000 0%,
+      transparent 65%
+    );
   }
 </style>

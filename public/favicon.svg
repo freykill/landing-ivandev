@@ -1,46 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ID monogram">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0f"/>
-      <stop offset="100%" style="stop-color:#12121a"/>
+    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1C1C26"/>
+      <stop offset="1" stop-color="#0B0B10"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="50%" style="stop-color:#8b5cf6"/>
-      <stop offset="100%" style="stop-color:#a78bfa"/>
+    <linearGradient id="mark" x1="120" y1="150" x2="392" y2="362" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#7C3AED"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.4"/>
-      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
-    </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#6366f1" flood-opacity="0.3"/>
-    </filter>
   </defs>
-  
-  <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  
-  <!-- Subtle border -->
-  <rect x="2" y="2" width="508" height="508" rx="94" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.3"/>
-  
-  <!-- Corner glow -->
-  <circle cx="80" cy="80" r="120" fill="url(#glow)" opacity="0.5"/>
-  
-  <!-- Terminal bracket < -->
-  <path d="M 170 168 L 80 256 L 170 344" 
-        fill="none" stroke="url(#accent)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
-  
-  <!-- Terminal bracket > -->
-  <path d="M 342 168 L 432 256 L 342 344" 
-        fill="none" stroke="url(#accent)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
-  
-  <!-- Slash / in the middle -->
-  <path d="M 280 148 L 232 364" 
-        fill="none" stroke="#e2e8f0" stroke-width="32" stroke-linecap="round" opacity="0.9"/>
-  
-  <!-- Cursor blink dot -->
-  <circle cx="420" cy="400" r="14" fill="#22c55e" opacity="0.9">
-    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
-  </circle>
+
+  <!-- badge -->
+  <rect x="16" y="16" width="480" height="480" rx="116" fill="url(#badge)"/>
+  <rect x="16.5" y="16.5" width="479" height="479" rx="115.5" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
+
+  <!-- ID lettermark -->
+  <g fill="none" stroke="url(#mark)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round">
+    <!-- I -->
+    <line x1="150" y1="166" x2="150" y2="346"/>
+    <!-- D stem -->
+    <line x1="236" y1="160" x2="236" y2="352"/>
+    <!-- D bowl -->
+    <path d="M236 160 C 330 160 362 202 362 256 C 362 310 330 352 236 352"/>
+  </g>
 </svg>

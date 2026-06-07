@@ -1,161 +1,97 @@
 ---
-import { ArrowRight, ExternalLink, Mail, Github } from "@lucide/astro";
-import Navegador from "./components/navegador.astro";
+import { ExternalLink, Github, Lock } from "@lucide/astro";
+
+const projects = [
+  {
+    title: "Finance Application Platform",
+    description:
+      "App para gestionar finanzas personales — ingresos, gastos y balance en tiempo real. Auth con JWT + refresh token y deploy automatizado con GitHub Actions y Docker en servidor propio.",
+    stack: "Angular / Node / Postgres / Docker / TypeScript",
+    demo: "https://fiz-ng.vercel.app/auth/login",
+    github: "https://github.com/freykill/fiz-ng",
+  },
+  {
+    title: "Motor de reglas",
+    description:
+      "Motor de reglas de negocio configurable: condiciones, prioridades y acciones que se definen sin tocar código. Pensado para que el área operativa ajuste la lógica sin esperar un deploy.",
+    stack: ".NET / Angular / Azure / SQL Server",
+    confidential: true,
+  },
+  {
+    title: "Facturación electrónica",
+    description:
+      "Sistema de facturación electrónica: emisión y autorización de comprobantes con procesamiento asíncrono mediante lambdas, diseñado para soportar picos de carga sin perder documentos.",
+    stack: "Angular / Node / AWS Lambda / PostgreSQL",
+    confidential: true,
+  },
+  {
+    title: "Plataforma de seguridad",
+    description:
+      "Base de seguridad centralizada: autenticación, manejo de roles y auditoría como servicio compartido para varias aplicaciones internas, en lugar de repetir el login en cada una.",
+    stack: "Next.js / Node / AWS / PostgreSQL",
+    confidential: true,
+  },
+];
 ---
 
 <section class="py-20" id="projects">
-  <div
-    class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10"
-  >
-    <!-- <div class="col-span-2 flex justify-center flex-col items-center gap-3">
-      <h4 class="text-4xl font-bold text-center">
-        Finance Application Platform
+  <div class="max-w-7xl mx-auto px-6 flex flex-col gap-10">
+    <div class="flex flex-col items-start gap-3">
+      <p class="text-sm font-mono tracking-widest text-white/30">03 — PROYECTOS</p>
+      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+        Lo que he <span class="text-white/40">construido</span>
       </h4>
-      <p class="text-lg text-gray-400/90">
-        Tecnología moderna para problemas modernos.
-      </p>
-    </div> -->
-
-    <div class="col-span-2 flex justify-center flex-col items-start gap-3">
-      <p class="text-sm text-white/30">// &nbsp&nbsp PROYECTOS</p>
-      <h4 class="text-5xl font-bold">
-        Lo que he <span
-          class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent"
-          >construido</span
-        >
-      </h4>
-      <!-- <p class="text-lg text-gray-400/90">
-        Construyo aplicaciones web completas, de la interfaz al servidor, listas para el mundo real.
-      </p> -->
     </div>
 
-    <div class="col-span-2 lg:col-span-1 flex justify-center items-center">
-      <Navegador
-        src="fiz_captura.png"
-        url="app.fiz.com"
-        alt="Finance App Dashboard"
-      />
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {projects.map((project, i) => (
+        <article class="flex flex-col gap-5 p-8 border border-white/6 hover:border-white/15 rounded-xl bg-[#161616] transition-colors duration-200">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex flex-col gap-2">
+              <p class="text-sm font-mono tracking-widest text-white/30">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h5 class="text-2xl font-semibold tracking-tight">{project.title}</h5>
+            </div>
 
-    <div class="col-span-2 lg:col-span-1 flex flex-col justify-center gap-8">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm text-white/30">01&nbsp / &nbsp PROYECTOS</p>
-        <h4 class="text-3xl font-semibold">Finance Application Platform</h4>
-      </div>
-
-      <p class="text-white/35 text-lg">
-        App para gestionar finanzas personales — ingresos, gastos y balance en
-        tiempo real. Desplegada en servidor propio con CI/CD automatizado vía
-        GitHub Actions.
-      </p>
-
-      <div class="flex flex-col gap-3">
-        <div
-          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
-        >
-          <div class="mt-1.5">
-            <div class="w-2.5! h-2.5! rounded-full bg-[#7c5cfc] "></div>
+            {project.confidential && (
+              <div class="flex shrink-0 items-center gap-2 font-mono text-[11px] tracking-widest border border-amber-400/20 bg-amber-400/5 text-amber-300/80 rounded-full px-3 py-1.5 mt-1">
+                <Lock class="w-3.5 h-3.5" />
+                CONFIDENCIAL
+              </div>
+            )}
           </div>
 
-          <p class="text-white/35">
-            <span class="text-white">Auth con JWT + Refresh Token</span> — sesiones
-            seguras y persistentes sin fricción
+          <p class="text-white/35 leading-relaxed">{project.description}</p>
+
+          <p class="font-mono text-sm tracking-widest text-white/25 uppercase mt-auto">
+            {project.stack}
           </p>
-        </div>
 
-        <div
-          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
-        >
-          <div class="mt-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-[#7c5cfc]"></div>
-          </div>
-          <p class="text-white/35">
-            <span class="text-white">Interfaz limpia e intuitiva</span> — construida
-            con Angular y componentes modernos
-          </p>
-        </div>
-
-        <div
-          class="flex gap-3 border-white/6 hover:border-[#7c5cfc]/30 border rounded-xl px-4 py-3 bg-[#0e1020]/80 hover:backdrop-brightness-150 transition-all duration-300"
-        >
-          <div class="mt-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-[#7c5cfc]"></div>
-          </div>  
-          <p class="text-white/35">
-            <span class="text-white">Deploy automatizado</span> — GitHub Actions +
-            Docker en servidor propio, sin intervención manual
-          </p>
-        </div>
-      </div>
-
-      <!-- <div class="flex flex-wrap gap-2">
-        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
-          <p class="text-xs text-white">Angular</p>
-        </div>
-        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
-          <p class="text-xs text-white">Postgres</p>
-        </div>
-        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
-          <p class="text-xs text-white">Docker</p>
-        </div>
-        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
-          <p class="text-xs text-white">TypeScript</p>
-        </div>
-        <div class="border rounded-full border-gray-800 px-3 py-1 flex justify-center items-center">
-          <p class="text-xs text-white">Sequelize</p>
-        </div>
-      </div> -->
-
-      <div class="flex flex-wrap items-center gap-2 text-sm">
-        <!-- <p class="text text-white/30">STACK</p>
-          <p class="text text-white/30">/</p> -->
-
-        <div
-          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
-        >
-          Angular
-        </div>
-        <div
-          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
-        >
-          Postgres
-        </div>
-        <div
-          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
-        >
-          Docker
-        </div>
-        <div
-          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
-        >
-          TypeScript
-        </div>
-        <div
-          class="bg-[#0e1020]/80 px-2 py-1 rounded-lg border border-white/6 text-white/90 hover:backdrop-brightness-150 hover:text-[#7c5cfc]/80 transition-all duration-300"
-        >
-          Sequelize
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-3">
-        <button
-          onclick="window.open('https://fiz-ng.vercel.app/auth/login', '_blank')"
-          class="w-full lg:w-auto justify-center flex group gap-1 cursor-pointer hover:brightness-120 items-center bg-[#7c5cfc] shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 px-6 py-3 rounded-xl font-semibold"
-        >
-          <ExternalLink class="w-5" />
-          Ver proyecto
-        </button>
-
-        <button
-          onclick="window.open('https://github.com/freykill/fiz-ng', '_blank')"
-          class="w-full lg:w-auto justify-center flex group gap-2 cursor-pointer hover:backdrop-brightness-150 items-center bg-[#0e1020]/80 ring hover:ring-white hover:-translate-y-1 transition-all duration-300 ring-white/6 px-6 py-3 rounded-xl font-semibold"
-        >
-          <Github class="w-5" />
-          GitHub
-        </button>
-      </div>
+          {project.confidential ? (
+            <p class="font-mono text-xs text-white/25 border-t border-white/6 pt-4">
+              Proyecto bajo acuerdo de confidencialidad — puedo contar el detalle técnico en una entrevista.
+            </p>
+          ) : (
+            <div class="flex flex-wrap gap-3 border-t border-white/6 pt-4">
+              <button
+                onclick={`window.open('${project.demo}', '_blank')`}
+                class="w-full lg:w-auto justify-center flex gap-2 cursor-pointer items-center bg-[#7c5cfc] hover:bg-[#9f82ff] transition-colors duration-200 px-5 py-2.5 rounded-full font-semibold text-sm"
+              >
+                <ExternalLink class="w-4" />
+                Ver proyecto
+              </button>
+              <button
+                onclick={`window.open('${project.github}', '_blank')`}
+                class="w-full lg:w-auto justify-center flex gap-2 cursor-pointer items-center bg-[#1d1d1d] hover:bg-[#7c5cfc] transition-colors duration-200 px-5 py-2.5 rounded-full font-semibold text-sm"
+              >
+                <Github class="w-4" />
+                GitHub
+              </button>
+            </div>
+          )}
+        </article>
+      ))}
     </div>
   </div>
 </section>
-
-<!-- IMG -->

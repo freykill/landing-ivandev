@@ -1,71 +1,29 @@
 ---
-import { Lightbulb, PenTool, Code, Rocket, TrendingUp } from "@lucide/astro";
-
 const steps = [
   {
     number: "01",
-    icon: Lightbulb,
     title: "Estrategia",
     description: "Entender requisitos, definir alcance y planificar la arquitectura técnica",
-    color: "yellow",
-    bg: "bg-yellow-500/10",
-    border: "border-yellow-500/40",
-    iconBg: "bg-yellow-500/20",
-    iconColor: "text-yellow-400",
-    numberBg: "bg-yellow-500/20",
-    numberColor: "text-yellow-400",
   },
   {
     number: "02",
-    icon: PenTool,
     title: "Arquitectura",
     description: "Diseñar arquitectura de sistema escalable, esquemas de bases de datos y estructuras API",
-    color: "purple",
-    bg: "bg-purple-500/10",
-    border: "border-purple-500/40",
-    iconBg: "bg-purple-500/20",
-    iconColor: "text-purple-400",
-    numberBg: "bg-purple-500/20",
-    numberColor: "text-purple-400",
   },
   {
     number: "03",
-    icon: Code,
     title: "Desarrollo",
     description: "Construir funcionalidades con código limpio, testing automatizado e integración continua",
-    color: "cyan",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/40",
-    iconBg: "bg-cyan-500/20",
-    iconColor: "text-cyan-400",
-    numberBg: "bg-cyan-500/20",
-    numberColor: "text-cyan-400",
   },
   {
     number: "04",
-    icon: Rocket,
     title: "Deploy",
     description: "Configuración de infraestructura en la nube, pipelines CI/CD y despliegue en producción",
-    color: "green",
-    bg: "bg-green-500/10",
-    border: "border-green-500/40",
-    iconBg: "bg-green-500/20",
-    iconColor: "text-green-400",
-    numberBg: "bg-green-500/20",
-    numberColor: "text-green-400",
   },
   {
     number: "05",
-    icon: TrendingUp,
     title: "Optimización",
     description: "Monitoreo de rendimiento, auditorías de seguridad y mejoras continuas",
-    color: "sky",
-    bg: "bg-sky-500/10",
-    border: "border-sky-500/40",
-    iconBg: "bg-sky-500/20",
-    iconColor: "text-sky-400",
-    numberBg: "bg-sky-500/20",
-    numberColor: "text-sky-400",
   },
 ];
 ---
@@ -74,58 +32,44 @@ const steps = [
 
   <div class="max-w-7xl mx-auto px-6 flex flex-col lg:gap-30 gap-10">
 
-   
-
-
-       <div class="col-span-2 flex justify-center flex-col items-start gap-3">
-      <p class="text-sm text-white/30">// &nbsp&nbsp COMO TRABAJO</p>
-      <h4 class="text-5xl font-bold">
-        Mi <span
-          class="bg-linear-to-r from-purple-400 to-45% to-blue-400 bg-clip-text text-transparent"
-          >proceso</span>
+    <div class="col-span-2 flex justify-center flex-col items-start gap-3">
+      <p class="text-sm font-mono tracking-widest text-white/30">05 — PROCESO</p>
+      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+        Mi <span class="text-white/40">proceso</span>
       </h4>
       <p class="text-lg text-gray-400/90">
-        A systematic approach to building production-ready applications
+        Así llevo una idea desde el papel hasta producción.
       </p>
     </div>
 
 
     <!-- Steps -->
-    <div class="grid relative grid-cols-1 lg:grid-cols-5 gap-4  ">
+    <div class="grid relative grid-cols-1 lg:grid-cols-5 gap-4">
 
-      <div class="absolute z-0 lg:w-full lg:h-px lg:-top-10 w-px left-4.75 bg-linear-to-b   h-full lg:bg-linear-to-r lg:from-transparent from-[#7c5cfc] lg:via-[#7c5cfc] to-transparent"></div>
+      <div class="absolute z-0 lg:w-full lg:h-px lg:-top-10 w-px left-4.75 bg-linear-to-b h-full lg:bg-linear-to-r lg:from-transparent from-white/20 lg:via-white/20 to-transparent"></div>
 
-      {steps.map((step, index) => (
+      {steps.map((step) => (
 
       <div class="relative group">
 
-                 <div>
-                <div class={`absolute lg:-top-15 lg:right-25 font-mono z-99 group-hover:border-[#7c5cfc]/60 transition-all duration-300  text-[#7c5cfc] group-hover:backdrop-brightness-150  group-hover:bg-[#0e1020]/80 bg-[#0e1020] border-[#7c5cfc]/20   w-10 h-10 border rounded-full flex items-center hover:translate-0 justify-center font-bold ` }>
-                  {step.number}
-                </div>
-              </div>
+        <div>
+          <div class="absolute lg:-top-15 lg:right-25 font-mono z-99 group-hover:border-white/30 transition-colors duration-200 text-white/60 group-hover:text-white bg-[#161616] border-white/10 w-10 h-10 border rounded-full flex items-center justify-center font-bold">
+            {step.number}
+          </div>
+        </div>
 
+        <div class="flex flex-col gap-4 p-5 h-60 border ml-15 lg:m-auto group-hover:border-white/15 rounded-xl bg-[#161616] border-white/6 transition-colors duration-200">
 
-             
-           
+          <!-- Text -->
+          <div class="flex flex-col gap-2">
+            <h5 class="font-bold text-lg text-white">{step.title}</h5>
+            <p class="text-white/35 leading-relaxed">{step.description}</p>
+          </div>
 
-
-
-
-              <div class={`flex flex-col gap-4 p-5 border ml-15 lg:m-auto group-hover:border-[#7c5cfc]/30  group-hover:backdrop-brightness-150 rounded-xl bg-[#0e1020]/80 border-white/6 hover:-translate-y-1 transition-all duration-300`}>
-
-                <!-- Text -->
-                <div class="flex flex-col gap-2">
-                  <h5 class="font-bold text-lg text-white">{step.title}</h5>
-                  <p class=" text-white/35 leading-relaxed">{step.description}</p>
-                </div>
-
-              </div>
-              
+        </div>
 
       </div>
 
-    
       ))}
     </div>
 
