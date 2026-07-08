@@ -1,26 +1,12 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ID monogram">
-  <defs>
-    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1C1C26"/>
-      <stop offset="1" stop-color="#0B0B10"/>
-    </linearGradient>
-    <linearGradient id="mark" x1="120" y1="150" x2="392" y2="362" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#A78BFA"/>
-      <stop offset="1" stop-color="#7C3AED"/>
-    </linearGradient>
-  </defs>
-
-  <!-- badge -->
-  <rect x="16" y="16" width="480" height="480" rx="116" fill="url(#badge)"/>
-  <rect x="16.5" y="16.5" width="479" height="479" rx="115.5" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
-
-  <!-- ID lettermark -->
-  <g fill="none" stroke="url(#mark)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round">
-    <!-- I -->
-    <line x1="150" y1="166" x2="150" y2="346"/>
-    <!-- D stem -->
-    <line x1="236" y1="160" x2="236" y2="352"/>
-    <!-- D bowl -->
-    <path d="M236 160 C 330 160 362 202 362 256 C 362 310 330 352 236 352"/>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ivan Diaz">
+  <!-- tile: morado plano de la landing (#7c5cfc), sin gradiente -->
+  <rect width="512" height="512" rx="112" fill="#7c5cfc"/>
+  <!-- borde hairline, como las cards de la landing (border-white/8) -->
+  <rect x="2" y="2" width="508" height="508" rx="110" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3"/>
+  <!-- "I" slab-serif = inicial de Ivan + cursor de texto de terminal -->
+  <g fill="#ffffff">
+    <rect x="156" y="146" width="200" height="52" rx="10"/>
+    <rect x="211" y="146" width="90"  height="220"/>
+    <rect x="156" y="314" width="200" height="52" rx="10"/>
   </g>
 </svg>
