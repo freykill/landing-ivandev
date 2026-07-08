@@ -49,15 +49,15 @@ const certs = [
   {
     title: "Programación Backend en C# .NET",
     issuer: "Udemy",
-    year: "",
-    url: "",
+    year: "2026",
+    url: "https://ude.my/UC-c3b86f17a-adb9-48f8-b001-148ac3c0dcde",
     category: "UDEMY",
   },
   {
     title: "Principios SOLID y Clean Code",
     issuer: "Udemy",
-    year: "",
-    url: "",
+    year: "2026",
+    url: "https://ude.my/UC-e0709d72-8972-4658-ae64-e63d04539538",
     category: "UDEMY",
   },
   {
@@ -65,6 +65,20 @@ const certs = [
     issuer: "Udemy",
     year: "",
     url: "",
+    category: "UDEMY",
+  },
+  {
+    title: "SQL de cero: Tu guía práctica con PostgreSQL",
+    issuer: "Udemy",
+    year: "2026",
+    url: "https://ude.my/UC-e1894637-baf5-4300-9bb4-606d97d4f470",
+    category: "UDEMY",
+  },
+  {
+    title: "GIT+GitHub: Todo un sistema de control de versiones de cero",
+    issuer: "Udemy",
+    year: "2026",
+    url: "https://ude.my/UC-8d26f63d-ca50-4c1c-ad7f-99cc6ab24532",
     category: "UDEMY",
   },
 
@@ -98,13 +112,13 @@ const categories = [...new Set(certs.map((c) => c.category))].map((name) => ({
 }));
 ---
 
-<section class="py-20">
+<section class="py-20" id="certs">
   <div class="max-w-7xl mx-auto px-6 flex flex-col gap-10">
     <div class="flex flex-col items-start gap-3">
       <p class="text-sm font-mono tracking-widest text-white/30">04 — CERTIFICACIONES</p>
-      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
         Títulos y <span class="text-white/40">certificados</span>
-      </h4>
+      </h2>
     </div>
 
     <!-- Tabs de filtrado -->
@@ -135,8 +149,8 @@ const categories = [...new Set(certs.map((c) => c.category))].map((name) => ({
           class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5 border-t border-white/6 hover:border-white/15 transition-colors duration-200"
         >
           <div class="flex flex-col gap-1">
-            <h5 class="text-lg font-semibold tracking-tight">{item.title}</h5>
-            <p class="text-white/35 text-sm">{item.issuer}</p>
+            <h3 class="text-lg font-semibold tracking-tight">{item.title}</h3>
+            <p class="text-white/50 text-sm">{item.issuer}</p>
           </div>
 
           <div class="flex items-center gap-6 shrink-0">
@@ -199,6 +213,7 @@ const categories = [...new Set(certs.map((c) => c.category))].map((name) => ({
   import { gsap } from "gsap";
 
   const PER_PAGE = 3;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const tabs = document.querySelectorAll<HTMLButtonElement>("[data-cert-filter]");
   const items = [...document.querySelectorAll<HTMLElement>("[data-cert-item]")];
@@ -235,7 +250,7 @@ const categories = [...new Set(certs.map((c) => c.category))].map((name) => ({
     prevBtn.disabled = page === 0;
     nextBtn.disabled = page === totalPages - 1;
 
-    if (animate) {
+    if (animate && !reduceMotion) {
       gsap.from(visible, {
         opacity: 0,
         y: 12,

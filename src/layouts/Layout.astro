@@ -17,8 +17,8 @@ import Analytics from '@vercel/analytics/astro'
     <link rel="apple-touch-icon" sizes="512x512" href="/favicon-512.png" />
 
     <!-- Primary Meta Tags -->
-    <title>Ivan Diaz | Full-Stack Developer</title>
-    <meta name="title" content="Ivan Diaz | Full-Stack Developer" />
+    <title>Ivan Diaz — Full-Stack Developer · Angular, .NET, Node, AWS</title>
+    <meta name="title" content="Ivan Diaz — Full-Stack Developer · Angular, .NET, Node, AWS" />
     <meta name="description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
     <meta name="author" content="Ivan Diaz" />
     <meta name="robots" content="index, follow" />
@@ -28,19 +28,37 @@ import Analytics from '@vercel/analytics/astro'
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://landing-ivandev.vercel.app/" />
-    <meta property="og:title" content="Ivan Diaz | Full-Stack Developer" />
+    <meta property="og:title" content="Ivan Diaz — Full-Stack Developer · Angular, .NET, Node, AWS" />
     <meta property="og:description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
     <meta property="og:image" content="https://landing-ivandev.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="es_EC" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://landing-ivandev.vercel.app/" />
-    <meta property="twitter:title" content="Ivan Diaz | Full-Stack Developer" />
+    <meta property="twitter:title" content="Ivan Diaz — Full-Stack Developer · Angular, .NET, Node, AWS" />
     <meta property="twitter:description" content="Desarrollo soluciones completas desde la interfaz hasta el servidor. Código limpio, escalable y listo para producción." />
     <meta property="twitter:image" content="https://landing-ivandev.vercel.app/og-image.png" />
+
+    <!-- Datos estructurados: perfil profesional para buscadores -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ivan Diaz",
+        "alternateName": "Ivan Fabricio Diaz Quezada",
+        "jobTitle": "Full-Stack Developer",
+        "url": "https://landing-ivandev.vercel.app/",
+        "email": "mailto:fabriciodiazpay@gmail.com",
+        "sameAs": [
+          "https://github.com/freykill",
+          "https://www.linkedin.com/in/ifabridiaz/"
+        ],
+        "knowsAbout": ["Angular", ".NET", "Node.js", "TypeScript", "AWS", "Docker", "PostgreSQL"]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,10 +74,24 @@ import Analytics from '@vercel/analytics/astro'
     <slot />
     <footer class="border-t border-white/10 py-5">
       <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-        <p>© 2026 Ivan Diaz</p>
+        <p>© 2026 Ivan Diaz — Full-Stack Developer</p>
         <div class="flex gap-6">
-          <!-- <a href="#" class="hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
-          <a href="#" class="hover:text-gray-300 transition-colors duration-200">Terms of Service</a> -->
+          <a
+            href="https://github.com/freykill"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-300 transition-colors duration-200"
+          >GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/ifabridiaz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-300 transition-colors duration-200"
+          >LinkedIn</a>
+          <a
+            href="mailto:fabriciodiazpay@gmail.com"
+            class="hover:text-gray-300 transition-colors duration-200"
+          >Email</a>
         </div>
       </div>
     </footer>
@@ -87,32 +119,38 @@ import Analytics from '@vercel/analytics/astro'
         });
       }
 
-      // Entrada del texto del hero
-      const heroCopy = document.querySelector("#hero-copy");
-      if (heroCopy) {
-        gsap.from(heroCopy.children, {
-          y: 24,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power3.out",
+      // Respetar prefers-reduced-motion: sin animaciones de entrada,
+      // el contenido queda visible de inmediato
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!reduceMotion) {
+        // Entrada del texto del hero
+        const heroCopy = document.querySelector("#hero-copy");
+        if (heroCopy) {
+          gsap.from(heroCopy.children, {
+            y: 24,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out",
+          });
+        }
+
+        // Reveal de cada sección al entrar en viewport (excepto el hero)
+        document.querySelectorAll("main section").forEach((section, i) => {
+          if (i === 0) return;
+          const container = section.querySelector(":scope > div");
+          if (!container) return;
+          gsap.from(container.children, {
+            y: 28,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power3.out",
+            scrollTrigger: { trigger: section, start: "top 78%", once: true },
+          });
         });
       }
-
-      // Reveal de cada sección al entrar en viewport (excepto el hero)
-      document.querySelectorAll("main section").forEach((section, i) => {
-        if (i === 0) return;
-        const container = section.querySelector(":scope > div");
-        if (!container) return;
-        gsap.from(container.children, {
-          y: 28,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: { trigger: section, start: "top 78%", once: true },
-        });
-      });
     </script>
   </body>
 </html>
@@ -120,6 +158,18 @@ import Analytics from '@vercel/analytics/astro'
 <style is:global>
   body {
     font-family: 'Inter', sans-serif;
+  }
+
+  /* Scroll suave para los anclas del navbar (solo si el usuario no pide menos movimiento) */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Que las secciones no queden ocultas bajo el navbar fijo al navegar por ancla */
+  section {
+    scroll-margin-top: 4.5rem;
   }
 
   /* Grid base: puntos blancos finos que se desvanecen hacia los bordes */

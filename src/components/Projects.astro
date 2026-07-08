@@ -38,9 +38,9 @@ const projects = [
   <div class="max-w-7xl mx-auto px-6 flex flex-col gap-10">
     <div class="flex flex-col items-start gap-3">
       <p class="text-sm font-mono tracking-widest text-white/30">03 — PROYECTOS</p>
-      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
         Lo que he <span class="text-white/40">construido</span>
-      </h4>
+      </h2>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -51,7 +51,7 @@ const projects = [
               <p class="text-sm font-mono tracking-widest text-white/30">
                 {String(i + 1).padStart(2, "0")}
               </p>
-              <h5 class="text-2xl font-semibold tracking-tight">{project.title}</h5>
+              <h3 class="text-2xl font-semibold tracking-tight">{project.title}</h3>
             </div>
 
             {project.confidential && (
@@ -62,7 +62,7 @@ const projects = [
             )}
           </div>
 
-          <p class="text-white/35 leading-relaxed">{project.description}</p>
+          <p class="text-white/50 leading-relaxed">{project.description}</p>
 
           <p class="font-mono text-sm tracking-widest text-white/25 uppercase mt-auto">
             {project.stack}
@@ -70,24 +70,28 @@ const projects = [
 
           {project.confidential ? (
             <p class="font-mono text-xs text-white/25 border-t border-white/6 pt-4">
-              Proyecto bajo acuerdo de confidencialidad — puedo contar el detalle técnico en una entrevista.
+              Proyecto bajo acuerdo de confidencialidad
             </p>
           ) : (
             <div class="flex flex-wrap gap-3 border-t border-white/6 pt-4">
-              <button
-                onclick={`window.open('${project.demo}', '_blank')`}
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-full lg:w-auto justify-center flex gap-2 cursor-pointer items-center bg-[#7c5cfc] hover:bg-[#9f82ff] transition-colors duration-200 px-5 py-2.5 rounded-full font-semibold text-sm"
               >
                 <ExternalLink class="w-4" />
                 Ver proyecto
-              </button>
-              <button
-                onclick={`window.open('${project.github}', '_blank')`}
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="w-full lg:w-auto justify-center flex gap-2 cursor-pointer items-center bg-[#1d1d1d] hover:bg-[#7c5cfc] transition-colors duration-200 px-5 py-2.5 rounded-full font-semibold text-sm"
               >
                 <Github class="w-4" />
                 GitHub
-              </button>
+              </a>
             </div>
           )}
         </article>

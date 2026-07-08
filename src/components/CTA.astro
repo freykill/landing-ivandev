@@ -17,10 +17,10 @@ import {
 
     <div class="col-span-2 flex justify-center flex-col items-center gap-3">
       <p class="text-sm font-mono tracking-widest text-white/30">06 — CONTACTO</p>
-      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
         Hablemos de tu <br />
         <span class="text-white/40">próximo proyecto</span>
-      </h4>
+      </h2>
       <p class="text-lg text-gray-400/90 lg:w-1/2 w-full">
         Entiendo el caos, lo ordeno y lo transformo en algo que funcione. Si
         tienes algo en mente, escríbeme — respondo rápido.
@@ -29,8 +29,10 @@ import {
 
     <div class="flex flex-wrap gap-3">
       <!-- WhatsApp -->
-      <button
-        onclick="window.open('https://wa.me/593963123381', '_blank')"
+      <a
+        href="https://wa.me/593963123381"
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full lg:w-auto justify-center flex group gap-2 cursor-pointer items-center bg-[#7c5cfc] hover:bg-[#9f82ff] transition-colors duration-200 px-6 py-3 rounded-full font-semibold"
       >
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,16 +43,18 @@ import {
           ></path>
         </svg>
         WhatsApp
-      </button>
+      </a>
 
       <!-- LinkedIn -->
-      <button
-        onclick="window.open('https://www.linkedin.com/in/ifabridiaz/', '_blank')"
+      <a
+        href="https://www.linkedin.com/in/ifabridiaz/"
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full lg:w-auto justify-center flex group gap-2 cursor-pointer items-center bg-[#1d1d1d] hover:bg-[#7c5cfc] transition-colors duration-200 px-6 py-3 rounded-full font-semibold"
       >
         <Linkedin class="w-5" />
         LinkedIn
-      </button>
+      </a>
 
       <!-- Copiar correo -->
       <button
@@ -75,20 +79,24 @@ import {
 
     <!-- Social Icons -->
     <div class="flex justify-center items-center flex-wrap gap-3 mt-4">
-      <div
-        onclick="window.open('https://github.com/freykill', '_blank')"
+      <a
+        href="https://github.com/freykill"
+        target="_blank"
+        rel="noopener noreferrer"
         class="cursor-pointer gap-3 px-3 h-10 border bg-[#161616] border-white/6 rounded-full flex items-center justify-center hover:border-white/30 transition-colors duration-200"
       >
         <Github class="w-4 h-4 text-gray-400" />
         <span class="text-white/30">Github</span>
-      </div>
-      <div
-        onclick="window.open('https://www.linkedin.com/in/ifabridiaz/', '_blank')"
+      </a>
+      <a
+        href="https://www.linkedin.com/in/ifabridiaz/"
+        target="_blank"
+        rel="noopener noreferrer"
         class="cursor-pointer gap-3 px-3 h-10 border bg-[#161616] border-white/6 rounded-full flex items-center justify-center hover:border-white/30 transition-colors duration-200"
       >
         <Linkedin class="w-4 h-4 text-gray-400" />
         <span class="text-white/30">Linkedin</span>
-      </div>
+      </a>
       <a
         href="/cv.pdf"
         download="IVAN_DIAZ_CV.pdf"

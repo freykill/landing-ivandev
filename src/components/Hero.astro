@@ -1,6 +1,6 @@
 ---
 import { ArrowRight, Mail } from "@lucide/astro";
-import Lanyard from "./components/Lanyard/Lanyard.jsx";
+import LanyardGate from "./components/Lanyard/LanyardGate.jsx";
 
 // Logos del stack (Simple Icons, un solo path c/u — se pintan en gris con fill-current)
 const stack = [
@@ -33,7 +33,7 @@ const stack = [
 <div class="hidden lg:block lg:absolute lg:inset-0 lg:z-10">
   <!-- position: [x, y, z] de la cámara — x más negativo = gafete más a la DERECHA,
        y más negativo = gafete más arriba, z más chico = gafete más grande -->
-  <Lanyard client:only="react" position={[-2.5, -0.5, 18]} />
+  <LanyardGate client:only="react" position={[-2.5, -0.5, 18]} />
 </div>
 
   <div class="max-w-7xl w-full mx-auto px-6 grid grid-cols-2 items-center justify-center gap-15 relative z-20 pointer-events-none">
@@ -59,7 +59,7 @@ const stack = [
         </div>
 
         <!-- description -->
-        <p class="text-lg text-white/35 text-left">
+        <p class="text-lg text-white/50 text-left">
           Desarrollo soluciones completas con
           <span class="text-white font-semibold">Angular, .NET, Node y AWS</span> —
           desde la interfaz hasta el servidor. Me enfoco en escribir código limpio,
@@ -69,21 +69,21 @@ const stack = [
 
         <!-- botonera -->
         <div class="flex flex-wrap gap-3">
-          <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
+          <a href="#projects"
             class=" w-full lg:w-60 justify-center  flex group gap-1 cursor-pointer items-center bg-[#7c5cfc] hover:bg-[#9f82ff] transition-colors duration-200  px-6 py-3 rounded-full font-semibold"
           >
               Ver proyectos
             <ArrowRight
               class="w-5 transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </a>
 
-          <button onclick="document.getElementById('cta').scrollIntoView({ behavior: 'smooth' })"
+          <a href="#cta"
             class="w-full lg:w-60 justify-center flex group gap-2 cursor-pointer items-center bg-[#1d1d1d] hover:bg-[#7c5cfc] transition-colors duration-200 px-6 py-3 rounded-full font-semibold"
           >
             <Mail class="w-5" />
-            Contactame
-          </button>
+            Contáctame
+          </a>
         </div>
 
         <!-- stack: logos en gris (Simple Icons, monocromáticos) separados por slash -->
@@ -126,8 +126,8 @@ const stack = [
   </div>
 
   <!-- indicador de scroll: solo desktop, centrado abajo, baja a la siguiente sección -->
-  <button
-    onclick="this.closest('section').nextElementSibling?.scrollIntoView({ behavior: 'smooth' })"
+  <a
+    href="#about"
     aria-label="Desliza para ver más"
     class="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-3 cursor-pointer text-white/30 hover:text-[#9f82ff] transition-colors duration-200 group"
   >
@@ -135,7 +135,7 @@ const stack = [
       <span class="w-1 h-2 rounded-full bg-current animate-scroll-wheel"></span>
     </span>
     <span class="font-mono text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-  </button>
+  </a>
 </section>
 
 <style>

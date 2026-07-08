@@ -10,7 +10,8 @@
       "Bash(node scripts/generate-lanyard-textures.mjs)",
       "Bash(node scripts/extract-glb-textures.mjs)",
       "Bash(node -e \"const s=require\\('sharp'\\);s\\('scripts/glb-image-0-unnamed.png'\\).metadata\\(\\).then\\(m=>console.log\\('original texture:',m.width+'x'+m.height, 'ratio', \\(m.width/m.height\\).toFixed\\(3\\)\\)\\)\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\idiaz\\\\personal\\\\landing-ivandev\\\\public\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB\\)}})"
     ]
   }
 }

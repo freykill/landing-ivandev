@@ -2,14 +2,14 @@
 import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
 ---
 
-<section class="py-20">
+<section class="py-20" id="about">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 items-center justify-center gap-10">
-    
+
     <div class="col-span-2 flex justify-center flex-col items-start gap-3">
       <p class="text-sm font-mono tracking-widest text-white/30">01 — SOBRE MÍ</p>
-      <h4 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
         Del código a <span class="text-white/40">producción</span>
-      </h4>
+      </h2>
       <!-- <p class="text-lg text-gray-400/90">
         Construyo aplicaciones web completas, de la interfaz al servidor, listas para el mundo real.
       </p> -->
@@ -25,22 +25,22 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
       <div class="w-15 h-px bg-white/20"></div>
 
 
-      <p class="text-lg leading-relaxed text-white/35">
+      <p class="text-lg leading-relaxed text-white/50">
         Me apoyo en herramientas de <span class="text-white">CI/CD y servicios cloud</span> para que lo que
         construyo no se quede solo en mi máquina. Trato de entender bien el
         problema antes de escribir la primera línea, porque un buen diseño
         técnico ahorra muchas horas después.
       </p>
-      <p class="text-lg leading-relaxed text-white/35">
+      <p class="text-lg leading-relaxed text-white/50">
         <span class="text-white">Si algo puede automatizarse, lo automatizo.</span> Si algo tiene que escalar,
         lo pienso desde el principio. Y si hay que arreglarlo a las 2 de la
         mañana, ya sé cómo.
       </p>
 
 
-      <div class="flex gap-5 opacity-30 text-sm">
-      <div class="w-[1.5px] h-auto bg-[#7c5cfc]"></div>
-      <p class="w-1/2">"No entrego algo hasta que estoy seguro de que funciona. No porque me lo pidan — sino porque no puedo dejarlo así."</p>
+      <div class="flex gap-5 text-sm">
+      <div class="w-[1.5px] h-auto bg-[#7c5cfc]/50"></div>
+      <p class="w-1/2 text-white/45 italic">"No entrego algo hasta que estoy seguro de que funciona. No porque me lo pidan — sino porque no puedo dejarlo así."</p>
     </div>
 
 
@@ -54,7 +54,7 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
         <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Code class="text-[#7c5cfc]" />
         </div>
-        <h4 class="text-lg font-semibold">Frontend & Backend</h4>
+        <h3 class="text-lg font-semibold">Frontend & Backend</h3>
         <span class="text-gray-400"
           >Interfaces que se ven bien y APIs que hacen su trabajo, sin
           sacrificar una por la otra.</span
@@ -67,7 +67,7 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
         <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Shield class="text-[#7c5cfc]" />
         </div>
-        <h4 class="text-lg font-semibold">Autenticación y permisos</h4>
+        <h3 class="text-lg font-semibold">Autenticación y permisos</h3>
         <span class="text-gray-400"
           >Sistemas de login, roles y control de acceso integrados desde el
           principio, no como parche al final.</span
@@ -80,7 +80,7 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
         <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Database class="text-[#7c5cfc]" />
         </div>
-        <h4 class="text-lg font-semibold">Del local al servidor</h4>
+        <h3 class="text-lg font-semibold">Del local al servidor</h3>
         <span class="text-gray-400"
           >Uso pipelines y servicios cloud para que el proyecto llegue a
           producción sin dramas.</span
@@ -93,7 +93,7 @@ import { ArrowRight, Mail, Code, Shield, Database, Zap } from "@lucide/astro";
         <div class=" p-3 col-span-1 w-12 rounded-xl shadow">
           <Zap class="text-[#7c5cfc]" />
         </div>
-        <h4 class="text-lg font-semibold">Código que dura</h4>
+        <h3 class="text-lg font-semibold">Código que dura</h3>
         <span class="text-gray-400"
           >Escribo pensando en quien lo va a mantener después, que muchas veces
           soy yo mismo.</span

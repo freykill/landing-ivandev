@@ -1,6 +1,52 @@
 ---
+import { Github, Download } from "@lucide/astro";
+
+const links = [
+  { href: "#about", label: "Sobre mí" },
+  { href: "#projects", label: "Proyectos" },
+  { href: "#certs", label: "Certificados" },
+  { href: "#cta", label: "Contacto" },
+];
 ---
 
-<nav>
-  <p>Navbar</p>
-</nav>
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/6 bg-[#121212]/80 backdrop-blur-md">
+  <nav aria-label="Principal" class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
+    <!-- Logo -->
+    <a href="#" class="font-mono text-sm tracking-widest font-semibold hover:text-[#9f82ff] transition-colors duration-200">
+      IVAN<span class="text-[#7c5cfc]">.</span>DIAZ
+    </a>
+
+    <!-- Links de sección: solo desktop -->
+    <div class="hidden md:flex items-center gap-8">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="font-mono text-xs tracking-widest uppercase text-white/40 hover:text-white transition-colors duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Acciones: siempre visibles -->
+    <div class="flex items-center gap-2">
+      <a
+        href="https://github.com/freykill"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub de Ivan Diaz"
+        class="flex items-center justify-center w-9 h-9 rounded-full border border-white/6 bg-[#161616] text-white/40 hover:border-white/30 hover:text-white transition-colors duration-200"
+      >
+        <Github class="w-4 h-4" />
+      </a>
+      <a
+        href="/cv.pdf"
+        download="IVAN_DIAZ_CV.pdf"
+        class="flex items-center gap-2 h-9 px-4 rounded-full bg-[#7c5cfc] hover:bg-[#9f82ff] transition-colors duration-200 font-semibold text-sm"
+      >
+        <Download class="w-4 h-4" />
+        CV
+      </a>
+    </div>
+  </nav>
+</header>
